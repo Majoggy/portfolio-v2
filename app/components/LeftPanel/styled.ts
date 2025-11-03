@@ -1,5 +1,5 @@
-import { breakpoints, colors, fonts, spacing } from "@/styles/utils";
-import styled from "styled-components";
+import { breakpoints, colors, fonts, spacing } from '@/styles/utils';
+import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   width: 40%;
@@ -31,7 +31,7 @@ export const Name = styled.h1`
     font-size: 3rem;
   }
 
-    @media (max-width: ${breakpoints.smallMobile}) {
+  @media (max-width: ${breakpoints.smallMobile}) {
     font-size: 2rem;
   }
 `;

@@ -1,4 +1,4 @@
-import { Wrapper, Name, Title, LinkList, LinkItem, Link } from "./styled";
+import { Wrapper, Name, Title, LinkList, LinkItem, Link } from './styled';
 
 export const LeftPanel = () => {
   return (
@@ -28,4 +28,4 @@ export const LeftPanel = () => {
       </LinkList>
     </Wrapper>
   );
-}
+};

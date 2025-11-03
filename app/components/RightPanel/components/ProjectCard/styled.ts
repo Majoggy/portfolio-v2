@@ -1,5 +1,5 @@
-import { colors, fonts, gradients, transitions } from "@/styles/utils";
-import styled from "styled-components";
+import { colors, fonts, gradients, transitions } from '@/styles/utils';
+import styled from 'styled-components';
 
 export const Card = styled.div`
   background: ${gradients.card};

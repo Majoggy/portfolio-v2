@@ -1,5 +1,5 @@
-import { colors, breakpoints, spacing} from "@/styles/utils";
-import styled from "styled-components";
+import { colors, breakpoints, spacing } from '@/styles/utils';
+import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   width: 60%;

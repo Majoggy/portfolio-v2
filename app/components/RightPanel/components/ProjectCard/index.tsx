@@ -1,4 +1,13 @@
-import { Card, Description, Links, ProjectLink, ProjectNumber, TechStack, TechTag, Title } from './styled';
+import {
+  Card,
+  Description,
+  Links,
+  ProjectLink,
+  ProjectNumber,
+  TechStack,
+  TechTag,
+  Title,
+} from './styled';
 
 interface Props {
   number: string;
@@ -23,16 +32,16 @@ export const ProjectCard = ({
       <Title>{title}</Title>
       <Description>{description}</Description>
       <TechStack>
-        {technologies && technologies.map((tech, index) => (
-          <TechTag key={index}>{tech}</TechTag>
-        ))}
+        {technologies && technologies.map((tech, index) => <TechTag key={index}>{tech}</TechTag>)}
       </TechStack>
       <Links>
-        {liveLink && (
-          <ProjectLink href={liveLink} target="_blank" rel="noopener noreferrer">
-            View Project
-          </ProjectLink>
-        )}
+        <Section>
+          {liveLink && (
+            <ProjectLink href={liveLink} target="_blank" rel="noopener noreferrer">
+              View Project
+            </ProjectLink>
+          )}
+        </Section>
         {githubLink && (
           <ProjectLink href={githubLink} target="_blank" rel="noopener noreferrer">
             GitHub

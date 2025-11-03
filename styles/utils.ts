@@ -1,20 +1,19 @@
-
 // colors.ts
 export const colors = {
   // Primary colors
   deepNavy: '#0a1929',
   richNavy: '#0d2137',
   navyAccent: '#1a3a52',
-  
+
   // Blue spectrum
   electricBlue: '#60a5fa',
   skyBlue: '#93c5fd',
   darkBlue: '#1e3a57',
-  
+
   // Purple accents (for gradients)
   lavender: '#a78bfa',
   pink: '#f472b6',
-  
+
   // Neutrals
   white: '#ffffff',
   offWhite: '#f1f5f9',
@@ -22,7 +21,7 @@ export const colors = {
   mediumGray: '#cbd5e1',
   coolGray: '#94a3b8',
   darkGray: '#1f2937',
-  
+
   // Overlays
   cardBackground: 'rgba(30, 58, 87, 0.6)',
   cardBackgroundHover: 'rgba(26, 55, 82, 0.4)',
@@ -46,7 +45,7 @@ export const fonts = {
 };
 
 export const breakpoints = {
-  smallMobile: "500px",
+  smallMobile: '500px',
   mobile: '840px',
   tablet: '1024px',
   desktop: '1440px',
@@ -73,5 +72,5 @@ export default {
   transitions,
   spacing,
   fonts,
-  gradients
+  gradients,
 };
