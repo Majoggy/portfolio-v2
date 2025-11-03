@@ -2,21 +2,26 @@ import styled from 'styled-components';
 import { Wrapper } from './styled';
 import { ProjectCard } from './components/ProjectCard';
 import { projects } from './data';
+import { Section } from './components/Section';
 
 export const RightPanel = () => {
   return (
     <Wrapper>
-      <ProjectsGrid>
+      <Section heading="Projects" label="FEATURED WORK">
         {projects.map((project, index) => (
           <ProjectCard key={index} {...project} />
         ))}
-      </ProjectsGrid>
+      </Section>
+      <Section heading="Projects" label="FEATURED WORK">
+        {projects.map((project, index) => (
+          <ProjectCard key={index} {...project} />
+        ))}
+      </Section>
+      <Section heading="Projects" label="FEATURED WORK">
+        {projects.map((project, index) => (
+          <ProjectCard key={index} {...project} />
+        ))}
+      </Section>
     </Wrapper>
   );
 };
-
-const ProjectsGrid = styled.div`
-  display: grid;
-  gap: 40px;
-  max-width: 1200px;
-`;

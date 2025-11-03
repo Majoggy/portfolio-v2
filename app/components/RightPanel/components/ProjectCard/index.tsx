@@ -35,13 +35,11 @@ export const ProjectCard = ({
         {technologies && technologies.map((tech, index) => <TechTag key={index}>{tech}</TechTag>)}
       </TechStack>
       <Links>
-        <Section>
-          {liveLink && (
-            <ProjectLink href={liveLink} target="_blank" rel="noopener noreferrer">
-              View Project
-            </ProjectLink>
-          )}
-        </Section>
+        {liveLink && (
+          <ProjectLink href={liveLink} target="_blank" rel="noopener noreferrer">
+            View Project
+          </ProjectLink>
+        )}
         {githubLink && (
           <ProjectLink href={githubLink} target="_blank" rel="noopener noreferrer">
             GitHub
