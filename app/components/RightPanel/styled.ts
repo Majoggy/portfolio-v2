@@ -18,14 +18,14 @@ export const Wrapper = styled.div`
 export const ProjectsContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 1.875rem;
 `;
 
 export const ProjectCard = styled.div`
   background-color: ${colors.darkGray};
-  border-radius: 8px;
+  border-radius: 0.5rem;
   padding: ${spacing.xl};
-  min-height: 200px;
+  min-height: 12.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -33,6 +33,6 @@ export const ProjectCard = styled.div`
 
 export const PlaceholderText = styled.p`
   color: ${colors.lightGray};
-  font-size: 18px;
+  font-size: 1.125rem;
   text-align: center;
 `;

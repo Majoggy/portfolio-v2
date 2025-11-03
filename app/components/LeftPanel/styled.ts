@@ -24,7 +24,7 @@ export const Name = styled.h1`
   font-size: 4rem;
   font-family: ${fonts.heading};
   font-weight: 700;
-  margin: 0 0 8px 0;
+  margin: 0 0 0.5rem 0;
   line-height: 1.2;
 
   @media (max-width: ${breakpoints.tablet}) {
@@ -39,9 +39,9 @@ export const Name = styled.h1`
 export const Title = styled.h2`
   color: ${colors.white};
   font-family: ${fonts.body};
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 400;
-  margin: 0 0 40px 0;
+  margin: 0 0 2.5rem 0;
   opacity: 0.9;
 `;
 
@@ -52,10 +52,10 @@ export const LinkList = styled.ul`
 `;
 
 export const LinkItem = styled.li`
-  margin-bottom: 16px;
+  margin-bottom: 1rem;
 
-  @media (max-width: 768px) {
-    margin-bottom: 12px;
+  @media (max-width: 48rem) {
+    margin-bottom: 0.75rem;
   }
 `;
 
@@ -63,14 +63,10 @@ export const Link = styled.a`
   color: ${colors.white};
   font-family: ${fonts.body};
   text-decoration: none;
-  font-size: 16px;
+  font-size: 1rem;
   transition: color 0.3s ease;
 
   &:hover {
     color: ${colors.electricBlue};
-  }
-
-  @media (max-width: ${breakpoints.mobile}) {
-    font-size: 15px;
   }
 `;

@@ -3,56 +3,56 @@ import styled from 'styled-components';
 
 export const Card = styled.div`
   background: ${gradients.card};
-  border-radius: 16px;
-  padding: 50px;
+  border-radius: 1rem;
+  padding: 3.125rem;
   transition: all ${transitions.slow};
 
   &:hover {
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0.3125rem 0.9375rem rgba(0, 0, 0, 0.4);
   }
 `;
 
 export const ProjectNumber = styled.div`
   font-family: ${fonts.mono};
-  font-size: 14px;
+  font-size: 0.875rem;
   color: ${colors.electricBlue};
-  margin-bottom: 16px;
+  margin-bottom: 1rem;
   font-weight: 600;
   letter-spacing: 2px;
 `;
 
 export const Title = styled.h2`
   font-family: ${fonts.heading};
-  font-size: 36px;
+  font-size: 2.25rem;
   font-weight: 700;
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
   color: ${colors.offWhite};
   letter-spacing: -1px;
 `;
 
 export const Description = styled.p`
   font-family: ${fonts.body};
-  font-size: 18px;
+  font-size: 1.125rem;
   line-height: 1.7;
   color: ${colors.mediumGray};
-  margin-bottom: 30px;
+  margin-bottom: 1.875rem;
   font-weight: 400;
 `;
 
 export const TechStack = styled.div`
   display: flex;
-  gap: 12px;
+  gap: 0.75rem;
   flex-wrap: wrap;
-  margin-bottom: 30px;
+  margin-bottom: 1.875rem;
 `;
 
 export const TechTag = styled.span`
   background: ${colors.techTagBg};
   color: ${colors.skyBlue};
-  padding: 8px 16px;
-  border-radius: 6px;
-  font-size: 13px;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  font-size: 0.8125rem;
   font-family: ${fonts.mono};
   font-weight: 500;
   border: 1px solid ${colors.techTagBorder};
@@ -67,7 +67,7 @@ export const TechTag = styled.span`
 
 export const Links = styled.div`
   display: flex;
-  gap: 20px;
+  gap: 1.25rem;
 `;
 
 export const ProjectLink = styled.a`
@@ -75,10 +75,10 @@ export const ProjectLink = styled.a`
   text-decoration: none;
   font-family: ${fonts.body};
   font-weight: 500;
-  font-size: 16px;
+  font-size: 1rem;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 0.5rem;
   transition: all ${transitions.normal};
   position: relative;
 
@@ -89,10 +89,10 @@ export const ProjectLink = styled.a`
 
   &:hover {
     color: ${colors.skyBlue};
-    transform: translateX(4px);
+    transform: translateX(0.25rem);
 
     &::after {
-      transform: translateX(4px);
+      transform: translateX(0.25rem);
     }
   }
 `;

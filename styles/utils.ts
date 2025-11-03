@@ -45,19 +45,19 @@ export const fonts = {
 };
 
 export const breakpoints = {
-  smallMobile: '500px',
-  mobile: '840px',
-  tablet: '1024px',
-  desktop: '1440px',
+  smallMobile: '31.25rem',
+  mobile: '52.5rem',
+  tablet: '64rem',
+  desktop: '90rem',
 };
 
 export const spacing = {
-  xs: '8px',
-  sm: '16px',
-  md: '24px',
-  lg: '40px',
-  xl: '60px',
-  xxl: '80px',
+  xs: '0.5rem',
+  sm: '1rem',
+  md: '1.5rem',
+  lg: '2.5rem',
+  xl: '3.75rem',
+  xxl: '5rem',
 };
 
 export const transitions = {

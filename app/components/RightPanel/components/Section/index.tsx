@@ -19,13 +19,13 @@ export const Section = ({ heading, label, children, id }: Props) => {
 };
 
 const SectionWrapper = styled.section`
-  margin-bottom: 100px;
+  margin-bottom: 6.25rem;
   animation: fadeInUp 0.6s ease;
 
   @keyframes fadeInUp {
     from {
       opacity: 0;
-      transform: translateY(30px);
+      transform: translateY(1.875rem);
     }
     to {
       opacity: 1;
@@ -40,18 +40,18 @@ const SectionLabel = styled.div`
   font-weight: 600;
   letter-spacing: 2px;
   text-transform: uppercase;
-  margin-bottom: 15px;
+  margin-bottom: 1rem;
 `;
 
 const SectionTitle = styled.h2`
   font-size: 2.5rem;
   font-weight: 700;
-  margin-bottom: 40px;
+  margin-bottom: 2.5rem;
   color: #ccd6f6;
 `;
 
 const SectionContent = styled.div`
   display: grid;
-  gap: 40px;
-  max-width: 1200px;
+  gap: 2.5rem;
+  max-width: 75rem;
 `;
