@@ -1,6 +1,5 @@
-import { colors } from '@/styles/utils';
 import React from 'react';
-import styled from 'styled-components';
+import { SectionContent, SectionLabel, SectionTitle, SectionWrapper } from './styled';
 
 interface Props {
   heading: string;
@@ -18,41 +17,3 @@ export const Section = ({ heading, label, children, id }: Props) => {
     </SectionWrapper>
   );
 };
-
-const SectionWrapper = styled.section`
-  margin-bottom: 6.25rem;
-  animation: fadeInUp 0.6s ease;
-
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(1.875rem);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-`;
-
-const SectionLabel = styled.div`
-  font-size: 0.9rem;
-  color: ${colors.darkBlue}
-  font-weight: 600;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin-bottom: 1rem;
-`;
-
-const SectionTitle = styled.h2`
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 2.5rem;
-  color: ${colors.white};
-`;
-
-const SectionContent = styled.div`
-  display: grid;
-  gap: 2.5rem;
-  max-width: 75rem;
-`;

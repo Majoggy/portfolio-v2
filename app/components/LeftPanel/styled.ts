@@ -16,6 +16,11 @@ export const Wrapper = styled.div`
     position: relative;
     width: 100%;
     height: auto;
+    padding: ${spacing.lg};
+  }
+
+  @media (min-width: ${breakpoints.ultrawide}) {
+    padding-left: ${spacing.xxl};
   }
 `;
 
@@ -27,12 +32,17 @@ export const Name = styled.h1`
   margin: 0 0 1rem 0;
   line-height: 4.6rem;
 
+  @media (min-width: ${breakpoints.ultrawide}) {
+    font-size: 5rem;
+  }
+
   @media (max-width: ${breakpoints.tablet}) {
     font-size: 3rem;
+    line-height: 3rem;
   }
 
   @media (max-width: ${breakpoints.smallMobile}) {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 `;
 
@@ -43,6 +53,10 @@ export const Title = styled.h2`
   font-weight: 400;
   margin: 0 0 1.5rem 0;
   opacity: 0.9;
+
+  @media (min-width: ${breakpoints.ultrawide}) {
+    font-size: 1.75rem;
+  }
 `;
 
 export const LinkList = styled.ul`
@@ -55,6 +69,10 @@ export const LinkList = styled.ul`
   justify-content: space-between;
   flex-wrap: wrap;
   padding-top: 1rem;
+
+  @media (min-width: ${breakpoints.ultrawide}) {
+    flex-direction: column;
+  }
 `;
 
 export const LinkItem = styled.li``;
@@ -66,10 +84,13 @@ export const Link = styled.a`
   font-size: 1rem;
   transition: color 0.3s ease;
   font-weight: 700;
-  // text-decoration: underline;
 
   &:hover {
     color: ${colors.electricBlue};
+  }
+
+  @media (min-width: ${breakpoints.ultrawide}) {
+    font-size: 1.5rem;
   }
 `;
 
@@ -79,4 +100,9 @@ export const About = styled.p`
   text-decoration: none;
   font-size: 1rem;
   margin-bottom: 1.5rem;
+
+  @media (min-width: ${breakpoints.ultrawide}) {
+    max-width: 75%;
+    font-size: 1.5rem;
+  }
 `;

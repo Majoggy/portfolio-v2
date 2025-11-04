@@ -1,4 +1,4 @@
-import { colors, fonts, gradients, transitions } from '@/styles/utils';
+import { breakpoints, colors, fonts, gradients, spacing, transitions } from '@/styles/utils';
 import styled from 'styled-components';
 
 export const Card = styled.div`
@@ -11,6 +11,9 @@ export const Card = styled.div`
     transform: translateY(-2px);
     box-shadow: 0 0.3125rem 0.9375rem rgba(0, 0, 0, 0.4);
   }
+  @media (max-width: ${breakpoints.mobile}) {
+    padding: ${spacing.lg};
+  }
 `;
 
 export const ProjectNumber = styled.div`
@@ -20,6 +23,10 @@ export const ProjectNumber = styled.div`
   margin-bottom: 1rem;
   font-weight: 600;
   letter-spacing: 2px;
+
+  @media (max-width: ${breakpoints.mobile}) {
+    font-size: 0.775rem;
+  }
 `;
 
 export const Title = styled.h2`
@@ -29,6 +36,11 @@ export const Title = styled.h2`
   margin-bottom: 1.25rem;
   color: ${colors.lightGray};
   letter-spacing: -1px;
+
+  @media (max-width: ${breakpoints.mobile}) {
+    font-size: 1.75rem;
+    line-height: 2.2rem;
+  }
 `;
 
 export const Description = styled.p`
@@ -38,6 +50,10 @@ export const Description = styled.p`
   color: ${colors.mediumGray};
   margin-bottom: 1.875rem;
   font-weight: 400;
+
+  @media (max-width: ${breakpoints.mobile}) {
+    font-size: 1rem;
+  }
 `;
 
 export const TechStack = styled.div`
@@ -62,6 +78,10 @@ export const TechTag = styled.span`
   &:hover {
     background: rgba(96, 165, 250, 0.25);
     transform: translateY(-2px);
+  }
+
+  @media (max-width: ${breakpoints.mobile}) {
+    font-size: 0.7rem;
   }
 `;
 
@@ -94,5 +114,9 @@ export const ProjectLink = styled.a`
     &::after {
       transform: translateX(0.25rem);
     }
+  }
+
+  @media (max-width: ${breakpoints.mobile}) {
+    font-size: 0.75rem;
   }
 `;

@@ -12,6 +12,7 @@ export const Wrapper = styled.div`
   @media (max-width: ${breakpoints.mobile}) {
     width: 100%;
     margin-left: 0;
+    padding: ${spacing.lg};
   }
 `;
 
