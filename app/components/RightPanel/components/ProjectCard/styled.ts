@@ -27,7 +27,7 @@ export const Title = styled.h2`
   font-size: 2.25rem;
   font-weight: 700;
   margin-bottom: 1.25rem;
-  color: ${colors.offWhite};
+  color: ${colors.lightGray};
   letter-spacing: -1px;
 `;
 

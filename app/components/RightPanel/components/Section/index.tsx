@@ -1,3 +1,4 @@
+import { colors } from '@/styles/utils';
 import React from 'react';
 import styled from 'styled-components';
 
@@ -36,7 +37,7 @@ const SectionWrapper = styled.section`
 
 const SectionLabel = styled.div`
   font-size: 0.9rem;
-  color: #667eea;
+  color: ${colors.darkBlue}
   font-weight: 600;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -47,7 +48,7 @@ const SectionTitle = styled.h2`
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 2.5rem;
-  color: #ccd6f6;
+  color: ${colors.white};
 `;
 
 const SectionContent = styled.div`

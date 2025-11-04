@@ -24,8 +24,8 @@ export const Name = styled.h1`
   font-size: 4rem;
   font-family: ${fonts.heading};
   font-weight: 700;
-  margin: 0 0 0.5rem 0;
-  line-height: 1.2;
+  margin: 0 0 1rem 0;
+  line-height: 4.6rem;
 
   @media (max-width: ${breakpoints.tablet}) {
     font-size: 3rem;
@@ -41,7 +41,7 @@ export const Title = styled.h2`
   font-family: ${fonts.body};
   font-size: 1.25rem;
   font-weight: 400;
-  margin: 0 0 2.5rem 0;
+  margin: 0 0 1.5rem 0;
   opacity: 0.9;
 `;
 
@@ -49,15 +49,15 @@ export const LinkList = styled.ul`
   list-style: none;
   padding: 0;
   margin: 0;
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-top: 1rem;
 `;
 
-export const LinkItem = styled.li`
-  margin-bottom: 1rem;
-
-  @media (max-width: 48rem) {
-    margin-bottom: 0.75rem;
-  }
-`;
+export const LinkItem = styled.li``;
 
 export const Link = styled.a`
   color: ${colors.white};
@@ -65,8 +65,18 @@ export const Link = styled.a`
   text-decoration: none;
   font-size: 1rem;
   transition: color 0.3s ease;
+  font-weight: 700;
+  // text-decoration: underline;
 
   &:hover {
     color: ${colors.electricBlue};
   }
+`;
+
+export const About = styled.p`
+  color: ${colors.white};
+  font-family: ${fonts.body};
+  text-decoration: none;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
 `;
