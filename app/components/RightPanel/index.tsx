@@ -1,27 +1,12 @@
-import styled from 'styled-components';
 import { Wrapper } from './styled';
-import { ProjectCard } from './components/ProjectCard';
-import { projects } from './data';
-import { Section } from './components/Section';
+import { Employment } from './components/Employment';
+import { Projects } from './components/Projects';
 
 export const RightPanel = () => {
   return (
     <Wrapper>
-      <Section heading="Projects" label="FEATURED WORK">
-        {projects.map((project, index) => (
-          <ProjectCard key={index} {...project} />
-        ))}
-      </Section>
-      <Section heading="Projects" label="FEATURED WORK">
-        {projects.map((project, index) => (
-          <ProjectCard key={index} {...project} />
-        ))}
-      </Section>
-      <Section heading="Projects" label="FEATURED WORK">
-        {projects.map((project, index) => (
-          <ProjectCard key={index} {...project} />
-        ))}
-      </Section>
+      <Employment />
+      <Projects />
     </Wrapper>
   );
 };

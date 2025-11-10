@@ -8,7 +8,7 @@ export const projects = [
       'A sophisticated web application enabling teams to collaborate in real-time with live cursor tracking, document co-editing, and integrated video conferencing. Built with WebSockets for instant synchronization and optimized for performance at scale.',
     technologies: ['React', 'Node.js', 'WebSocket', 'MongoDB', 'Redis'],
     liveLink: 'https://example.com',
-    githubLink: 'https://example.com',
+    githubLink: 'https://github.com',
   },
   {
     number: 'PROJECT 02',
@@ -17,7 +17,7 @@ export const projects = [
       'An intelligent analytics platform that leverages machine learning to provide predictive insights and automated reporting. Features include custom data visualizations, natural language queries, and integration with multiple data sources for comprehensive business intelligence.',
     technologies: ['Python', 'TensorFlow', 'Vue.js', 'PostgreSQL', 'Docker'],
     liveLink: 'https://example.com',
-    githubLink: 'https://example.com',
+    githubLink: 'https://github.com',
   },
   {
     number: 'PROJECT 03',
@@ -26,6 +26,6 @@ export const projects = [
       'A robust microservices architecture for managing and executing distributed tasks across multiple servers. Implements fault tolerance, load balancing, and intelligent job prioritization with a clean RESTful API and comprehensive monitoring dashboard.',
     technologies: ['Go', 'Kubernetes', 'RabbitMQ', 'GraphQL', 'Prometheus'],
     liveLink: 'https://example.com',
-    githubLink: 'https://example.com',
+    githubLink: 'https://github.com',
   },
 ];

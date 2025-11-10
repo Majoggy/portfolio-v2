@@ -17,10 +17,10 @@ export const LeftPanel = () => {
       </About>
       <LinkList>
         <LinkItem>
-          <Link href="#about">About</Link>
+          <Link href="#projects">Projects</Link>
         </LinkItem>
         <LinkItem>
-          <Link href="#projects">Projects</Link>
+          <Link href="#employment">Employment</Link>
         </LinkItem>
         <LinkItem>
           <Link href="#contact">Contact</Link>
