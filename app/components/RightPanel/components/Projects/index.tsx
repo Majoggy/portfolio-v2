@@ -1,8 +1,12 @@
 import { Section } from '../Section';
 import { ProjectCard } from '../ProjectCard';
-import { projects } from './data';
+import { Project } from '@/lib/types';
 
-export const Projects = () => {
+interface Props {
+  projects: Project[];
+}
+
+export const Projects = ({ projects }: Props) => {
   return (
     <Section heading="Featured Work" label="PROJECTS" id="projects">
       {projects.map((project, index) => (

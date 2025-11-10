@@ -14,8 +14,8 @@ interface Props {
   title: string;
   description: string;
   technologies?: string[];
-  liveLink?: string;
-  githubLink?: string;
+  liveLink?: string | null;
+  githubLink?: string | null;
 }
 
 export const ProjectCard = ({

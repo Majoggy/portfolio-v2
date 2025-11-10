@@ -76,10 +76,13 @@ All styled components should reference these design tokens for consistency.
 
 ### Data Layer
 
-Currently, project data is **hard-coded** in `app/components/RightPanel/data.ts`. The comment indicates this is temporary until Strapi CMS integration. When implementing dynamic data:
+Apollo Client is configured in `lib/apollo-client.ts` for GraphQL queries to Strapi CMS.
 
-- Projects array structure: `{ number, title, description, technologies, liveLink, githubLink }`
-- Consider creating a data fetching layer or API route for Strapi integration
+Currently, project and employment data is **hard-coded** in:
+- `app/components/RightPanel/components/Employment/data.ts`
+- `app/components/RightPanel/components/Projects/data.ts`
+
+Environment variable `NEXT_PUBLIC_STRAPI_URL` is available for Strapi integration (defaults to http://localhost:1337).
 
 ### TypeScript Configuration
 
