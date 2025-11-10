@@ -8,7 +8,7 @@ export const colors = {
   lightGray: '#e0e7ff',
   mediumGray: '#cbd5e1',
   darkGray: '#1f2937',
-  techTagBg: 'rgba(96, 165, 250, 0.15)',
+  techTagBackground: 'rgba(96, 165, 250, 0.15)',
   techTagBorder: 'rgba(96, 165, 250, 0.2)',
 };
 

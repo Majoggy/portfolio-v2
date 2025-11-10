@@ -31,28 +31,28 @@ export const ProjectNumber = styled.div`
 
 export const Title = styled.h2`
   font-family: ${fonts.heading};
-  font-size: 2.25rem;
+  font-size: 1.75rem;
   font-weight: 700;
   margin-bottom: 1.25rem;
   color: ${colors.lightGray};
   letter-spacing: -1px;
 
   @media (max-width: ${breakpoints.mobile}) {
-    font-size: 1.75rem;
-    line-height: 2.2rem;
+    font-size: 1.5rem;
+    line-height: 1.8rem;
   }
 `;
 
 export const Description = styled.p`
   font-family: ${fonts.body};
-  font-size: 1.125rem;
+  font-size: 1rem;
   line-height: 1.7;
   color: ${colors.mediumGray};
   margin-bottom: 1.875rem;
   font-weight: 400;
 
   @media (max-width: ${breakpoints.mobile}) {
-    font-size: 1rem;
+    font-size: 0.9375rem;
   }
 `;
 
@@ -64,7 +64,7 @@ export const TechStack = styled.div`
 `;
 
 export const TechTag = styled.span`
-  background: ${colors.techTagBg};
+  background: ${colors.techTagBackground};
   color: ${colors.skyBlue};
   padding: 0.5rem 1rem;
   border-radius: 0.375rem;
