@@ -1,4 +1,5 @@
-import { Wrapper, Name, Title, LinkList, LinkItem, Link, About } from './styled';
+import { Wrapper, Name, Title, About } from './styled';
+import { LinkSection } from './components/LinkSection';
 
 export const LeftPanel = () => {
   return (
@@ -15,27 +16,7 @@ export const LeftPanel = () => {
         labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
         laboris.
       </About>
-      <LinkList>
-        <LinkItem>
-          <Link href="#projects">Projects</Link>
-        </LinkItem>
-        <LinkItem>
-          <Link href="#employment">Employment</Link>
-        </LinkItem>
-        <LinkItem>
-          <Link href="#contact">Contact</Link>
-        </LinkItem>
-        <LinkItem>
-          <Link href="https://github.com" target="_blank" rel="noopener noreferrer">
-            GitHub
-          </Link>
-        </LinkItem>
-        <LinkItem>
-          <Link href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-            LinkedIn
-          </Link>
-        </LinkItem>
-      </LinkList>
+      <LinkSection />
     </Wrapper>
   );
 };
