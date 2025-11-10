@@ -15,6 +15,7 @@ export const fadeInUp = keyframes`
 export const SectionWrapper = styled.section`
   margin-bottom: 6.25rem;
   animation: ${fadeInUp} 0.6s ease;
+  scroll-margin-top: 3.75rem;
 `;
 
 export const SectionLabel = styled.div`
