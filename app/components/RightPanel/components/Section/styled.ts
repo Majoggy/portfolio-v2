@@ -1,25 +1,25 @@
 import { breakpoints, colors, spacing } from '@/styles/utils';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+export const fadeInUp = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(1.875rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
 
 export const SectionWrapper = styled.section`
   margin-bottom: 6.25rem;
-  animation: fadeInUp 0.6s ease;
-
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(1.875rem);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
+  animation: ${fadeInUp} 0.6s ease;
 `;
 
 export const SectionLabel = styled.div`
   font-size: 0.9rem;
-  color: ${colors.darkBlue}
+  color: ${colors.electricBlue};
   font-weight: 600;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -30,7 +30,7 @@ export const SectionTitle = styled.h2`
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 2.5rem;
-  color: ${colors.white};
+  color: ${colors.lightGray};
 `;
 
 export const SectionContent = styled.div`
@@ -38,6 +38,6 @@ export const SectionContent = styled.div`
   gap: ${spacing.xl};
 
   @media (min-width: ${breakpoints.ultrawide}) {
-    grid-template-columns: repeat(2, 1fr);
+    gap: ${spacing.xxl};
   }
 `;

@@ -1,10 +1,10 @@
-import { colors, breakpoints, spacing } from '@/styles/utils';
+import { colors, breakpoints, spacing, gradients } from '@/styles/utils';
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   width: 60%;
   margin-left: 40%;
-  background-color: ${colors.electricBlue};
+  background: ${gradients.background};
   padding: ${spacing.xl};
   overflow-y: auto;
   min-height: 100vh;
@@ -13,6 +13,10 @@ export const Wrapper = styled.div`
     width: 100%;
     margin-left: 0;
     padding: ${spacing.lg};
+  }
+
+  @media (min-width: ${breakpoints.ultrawide}) {
+    padding: ${spacing.xxl};
   }
 `;
 

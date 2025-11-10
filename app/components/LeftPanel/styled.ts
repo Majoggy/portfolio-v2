@@ -1,9 +1,9 @@
-import { breakpoints, colors, fonts, spacing } from '@/styles/utils';
+import { breakpoints, colors, fonts, gradients, spacing } from '@/styles/utils';
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   width: 40%;
-  background-color: ${colors.deepNavy};
+  background: ${gradients.leftPanel};
   padding: ${spacing.xl};
   display: flex;
   flex-direction: column;
@@ -25,7 +25,7 @@ export const Wrapper = styled.div`
 `;
 
 export const Name = styled.h1`
-  color: ${colors.white};
+  color: ${colors.electricBlue};
   font-size: 4rem;
   font-family: ${fonts.heading};
   font-weight: 700;
@@ -33,7 +33,7 @@ export const Name = styled.h1`
   line-height: 4.6rem;
 
   @media (min-width: ${breakpoints.ultrawide}) {
-    font-size: 5rem;
+    font-size: 4rem;
   }
 
   @media (max-width: ${breakpoints.tablet}) {
@@ -47,7 +47,7 @@ export const Name = styled.h1`
 `;
 
 export const Title = styled.h2`
-  color: ${colors.white};
+  color: ${colors.lightGray};
   font-family: ${fonts.body};
   font-size: 1.25rem;
   font-weight: 400;
@@ -55,7 +55,7 @@ export const Title = styled.h2`
   opacity: 0.9;
 
   @media (min-width: ${breakpoints.ultrawide}) {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
   }
 `;
 
@@ -78,7 +78,7 @@ export const LinkList = styled.ul`
 export const LinkItem = styled.li``;
 
 export const Link = styled.a`
-  color: ${colors.white};
+  color: ${colors.lightGray};
   font-family: ${fonts.body};
   text-decoration: none;
   font-size: 1rem;
@@ -90,12 +90,12 @@ export const Link = styled.a`
   }
 
   @media (min-width: ${breakpoints.ultrawide}) {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
 `;
 
 export const About = styled.p`
-  color: ${colors.white};
+  color: ${colors.lightGray};
   font-family: ${fonts.body};
   text-decoration: none;
   font-size: 1rem;
