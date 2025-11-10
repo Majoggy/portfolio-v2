@@ -11,8 +11,8 @@ interface Props {
 export const RightPanel = ({ employments, projects }: Props) => {
   return (
     <Wrapper>
-      <Employment employments={employments} />
       <Projects projects={projects} />
+      <Employment employments={employments} />
     </Wrapper>
   );
 };
