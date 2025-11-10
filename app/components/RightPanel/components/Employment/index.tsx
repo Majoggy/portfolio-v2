@@ -1,11 +1,15 @@
 import { Section } from '../Section';
 import { EmploymentCard } from '../EmploymentCard';
-import { employment } from './data';
+import type { Employment as EmploymentType } from '@/lib/types';
 
-export const Employment = () => {
+interface Props {
+  employments: EmploymentType[];
+}
+
+export const Employment = ({ employments }: Props) => {
   return (
     <Section heading="Experience" label="EMPLOYMENT HISTORY" id="employment">
-      {employment.map((job, index) => (
+      {employments.map((job, index) => (
         <EmploymentCard key={index} {...job} />
       ))}
     </Section>

@@ -1,14 +1,9 @@
-'use client';
+import { getEmployments, getProjects } from '@/lib/api';
+import { PortfolioClient } from './PortfolioClient';
 
-import { RightPanel } from './components/RightPanel';
-import { LeftPanel } from './components/LeftPanel';
-import { Container } from './styled';
+export default async function Portfolio() {
+  const employments = await getEmployments();
+  const projects = await getProjects();
 
-export default function Portfolio() {
-  return (
-    <Container>
-      <LeftPanel />
-      <RightPanel />
-    </Container>
-  );
+  return <PortfolioClient employments={employments} projects={projects} />;
 }
