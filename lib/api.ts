@@ -1,11 +1,13 @@
 import { apolloClient } from '@/lib/apollo-client';
 import {
   GetEmploymentsDocument,
+  GetLeftPanelDocument,
   GetProjectsDocument,
   type GetEmploymentsQuery,
+  type GetLeftPanelQuery,
   type GetProjectsQuery,
 } from '@/lib/graphql-types';
-import { Employment, Project } from './types';
+import { Employment, LeftPanelData, Project } from './types';
 import { formatPeriod } from './utils';
 
 export async function getEmployments(): Promise<Employment[]> {
@@ -47,4 +49,28 @@ export async function getProjects(): Promise<Project[]> {
       project?.technologies?.map((tech) => tech?.name).filter((name): name is string => !!name) ??
       [],
   }));
+}
+
+export async function getLeftPanel(): Promise<LeftPanelData | null> {
+  const { data } = await apolloClient.query<GetLeftPanelQuery>({
+    query: GetLeftPanelDocument,
+  });
+
+  if (!data?.leftPanel) {
+    return null;
+  }
+
+  return {
+    name: data.leftPanel.name,
+    jobTitle: data.leftPanel.jobTitle,
+    about: data.leftPanel.about || '',
+    links:
+      data.leftPanel.link
+        ?.filter((link) => link !== null)
+        .map((link) => ({
+          label: link!.label,
+          href: link!.href,
+          isExternal: link!.isExternal,
+        })) ?? [],
+  };
 }

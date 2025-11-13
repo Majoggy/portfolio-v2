@@ -3,17 +3,18 @@
 import { RightPanel } from './components/RightPanel';
 import { LeftPanel } from './components/LeftPanel';
 import { Container } from './styled';
-import type { Employment, Project } from '@/lib/types';
+import type { Employment, LeftPanelData, Project } from '@/lib/types';
 
 interface Props {
   employments: Employment[];
   projects: Project[];
+  leftPanelData: LeftPanelData;
 }
 
-export function PortfolioClient({ employments, projects }: Props) {
+export function PortfolioClient({ employments, projects, leftPanelData }: Props) {
   return (
     <Container>
-      <LeftPanel />
+      <LeftPanel data={leftPanelData} />
       <RightPanel projects={projects} employments={employments} />
     </Container>
   );

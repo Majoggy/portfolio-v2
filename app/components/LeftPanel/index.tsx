@@ -1,22 +1,18 @@
 import { Wrapper, Name, Title, About } from './styled';
 import { LinkSection } from './components/LinkSection';
+import type { LeftPanelData } from '@/lib/types';
 
-export const LeftPanel = () => {
+interface Props {
+  data: LeftPanelData;
+}
+
+export const LeftPanel = ({ data }: Props) => {
   return (
     <Wrapper>
-      <Name>Christian Baker</Name>
-      <Title>Full-Stack Software Engineer</Title>
-      <About>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
-        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-        laboris.
-      </About>
-      <About>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
-        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-        laboris.
-      </About>
-      <LinkSection />
+      <Name>{data.name}</Name>
+      <Title>{data.jobTitle}</Title>
+      <About>{data.about}</About>
+      <LinkSection links={data.links} />
     </Wrapper>
   );
 };

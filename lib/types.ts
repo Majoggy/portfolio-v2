@@ -15,3 +15,16 @@ export type Project = {
   order: number;
   technologies: string[];
 };
+
+export type LeftPanelLink = {
+  label: string;
+  href: string;
+  isExternal: boolean;
+};
+
+export type LeftPanelData = {
+  name: string;
+  jobTitle: string;
+  about: string;
+  links: LeftPanelLink[];
+};
