@@ -1,4 +1,6 @@
-import { Wrapper, Name, Title, About } from './styled';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import { Wrapper, Name, Title, MarkdownContent } from './styled';
 import { LinkSection } from './components/LinkSection';
 import type { LeftPanelData } from '@/lib/types';
 
@@ -11,7 +13,9 @@ export const LeftPanel = ({ data }: Props) => {
     <Wrapper>
       <Name>{data.name}</Name>
       <Title>{data.jobTitle}</Title>
-      <About>{data.about}</About>
+      <MarkdownContent>
+        <ReactMarkdown remarkPlugins={[remarkGfm]}>{data.about}</ReactMarkdown>
+      </MarkdownContent>
       <LinkSection links={data.links} />
     </Wrapper>
   );
