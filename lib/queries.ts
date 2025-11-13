@@ -29,3 +29,18 @@ export const GET_EMPLOYMENT = gql`
     }
   }
 `;
+
+export const GET_LEFT_PANEL = gql`
+  query GetLeftPanel {
+    leftPanel {
+      name
+      jobTitle
+      about
+      link {
+        label
+        href
+        isExternal
+      }
+    }
+  }
+`;

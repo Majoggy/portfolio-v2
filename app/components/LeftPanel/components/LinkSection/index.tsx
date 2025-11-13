@@ -1,15 +1,19 @@
 import { Link, LinkItem, LinkList } from './styled';
-import { links } from '../../data';
+import type { LeftPanelLink } from '@/lib/types';
 
-export const LinkSection = () => {
+interface Props {
+  links: LeftPanelLink[];
+}
+
+export const LinkSection = ({ links }: Props) => {
   return (
     <LinkList>
       {links.map((link, index) => (
         <LinkItem key={index}>
           <Link
             href={link.href}
-            target={link.external ? '_blank' : undefined}
-            rel={link.external ? 'noopener noreferrer' : undefined}
+            target={link.isExternal ? '_blank' : undefined}
+            rel={link.isExternal ? 'noopener noreferrer' : undefined}
           >
             {link.label}
           </Link>
