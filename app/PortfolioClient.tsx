@@ -8,7 +8,7 @@ import type { Employment, LeftPanelData, Project } from '@/lib/types';
 interface Props {
   employments: Employment[];
   projects: Project[];
-  leftPanelData: LeftPanelData;
+  leftPanelData: LeftPanelData | null;
 }
 
 export function PortfolioClient({ employments, projects, leftPanelData }: Props) {

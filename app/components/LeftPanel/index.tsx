@@ -5,10 +5,14 @@ import { LinkSection } from './components/LinkSection';
 import type { LeftPanelData } from '@/lib/types';
 
 interface Props {
-  data: LeftPanelData;
+  data: LeftPanelData | null;
 }
 
 export const LeftPanel = ({ data }: Props) => {
+  if (!data) {
+    return <Wrapper />;
+  }
+
   return (
     <Wrapper>
       <Name>{data.name}</Name>

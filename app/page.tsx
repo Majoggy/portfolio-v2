@@ -6,15 +6,7 @@ export default async function Portfolio() {
   const projects = await getProjects();
   const leftPanelData = await getLeftPanel();
 
-  if (!leftPanelData) {
-    throw new Error('Failed to load left panel data');
-  }
-
   return (
-    <PortfolioClient
-      employments={employments}
-      projects={projects}
-      leftPanelData={leftPanelData}
-    />
+    <PortfolioClient employments={employments} projects={projects} leftPanelData={leftPanelData} />
   );
 }
