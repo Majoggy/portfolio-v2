@@ -1,10 +1,8 @@
-import { getEmployments, getLeftPanel, getProjects } from '@/lib/api';
+import { getPortfolio } from '@/lib/api';
 import { PortfolioClient } from './PortfolioClient';
 
 export default async function Portfolio() {
-  const employments = await getEmployments();
-  const projects = await getProjects();
-  const leftPanelData = await getLeftPanel();
+  const { employments, projects, leftPanelData } = await getPortfolio();
 
   return (
     <PortfolioClient employments={employments} projects={projects} leftPanelData={leftPanelData} />

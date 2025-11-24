@@ -1,76 +1,76 @@
 import { apolloClient } from '@/lib/apollo-client';
-import {
-  GetEmploymentsDocument,
-  GetLeftPanelDocument,
-  GetProjectsDocument,
-  type GetEmploymentsQuery,
-  type GetLeftPanelQuery,
-  type GetProjectsQuery,
-} from '@/lib/graphql-types';
+import { GetPortfolioDataDocument, type GetPortfolioDataQuery } from '@/lib/graphql-types';
 import { Employment, LeftPanelData, Project } from './types';
 import { formatPeriod } from './utils';
 
-export async function getEmployments(): Promise<Employment[]> {
-  const { data } = await apolloClient.query<GetEmploymentsQuery>({
-    query: GetEmploymentsDocument,
+export async function getPortfolio(): Promise<{
+  leftPanelData: LeftPanelData | null;
+  employments: Employment[];
+  projects: Project[];
+}> {
+  const { data } = await apolloClient.query<GetPortfolioDataQuery>({
+    query: GetPortfolioDataDocument,
   });
 
-  if (!data?.employments) {
-    return [];
+  if (!data?.portfolio) {
+    return {
+      leftPanelData: null,
+      employments: [],
+      projects: [],
+    };
   }
 
-  return data.employments.map((job) => ({
-    title: job?.title || '',
-    company: job?.company || '',
-    period: formatPeriod(job?.startDate, job?.endDate ?? ''),
-    responsibilities: job?.responsibilities ?? [],
-    technologies:
-      job?.technologies?.map((tech) => tech?.name).filter((name): name is string => !!name) ?? [],
-  }));
-}
+  const portfolio = data.portfolio;
 
-export async function getProjects(): Promise<Project[]> {
-  const { data } = await apolloClient.query<GetProjectsQuery>({
-    query: GetProjectsDocument,
-  });
-
-  if (!data?.projects) {
-    return [];
-  }
-
-  return data.projects.map((project, index) => ({
-    number: `PROJECT ${String(index + 1).padStart(2, '0')}`,
-    title: project?.title || '',
-    description: project?.description || '',
-    liveLink: project?.liveLink ?? null,
-    gitHubLink: project?.gitHubLink ?? null,
-    order: project?.order ?? 0,
-    technologies:
-      project?.technologies?.map((tech) => tech?.name).filter((name): name is string => !!name) ??
-      [],
-  }));
-}
-
-export async function getLeftPanel(): Promise<LeftPanelData | null> {
-  const { data } = await apolloClient.query<GetLeftPanelQuery>({
-    query: GetLeftPanelDocument,
-  });
-
-  if (!data?.leftPanel) {
-    return null;
-  }
-
-  return {
-    name: data.leftPanel.name,
-    jobTitle: data.leftPanel.jobTitle,
-    about: data.leftPanel.about || '',
+  const leftPanelData: LeftPanelData = {
+    name: portfolio.name,
+    jobTitle: portfolio.jobTitle,
+    about: portfolio.about || '',
     links:
-      data.leftPanel.link
+      portfolio.link
         ?.filter((link) => link !== null)
         .map((link) => ({
           label: link!.label,
           href: link!.href,
           isExternal: link!.isExternal,
         })) ?? [],
+  };
+
+  const employments: Employment[] = portfolio.employment
+    ? [
+        {
+          title: portfolio.employment.title || '',
+          company: portfolio.employment.company || '',
+          period: formatPeriod(portfolio.employment.startDate, portfolio.employment.endDate ?? ''),
+          responsibilities: Array.isArray(portfolio.employment.responsibilities)
+            ? portfolio.employment.responsibilities
+            : [],
+          technologies:
+            portfolio.employment.technologies
+              ?.map((tech) => tech?.name)
+              .filter((name): name is string => !!name) ?? [],
+        },
+      ]
+    : [];
+
+  const projects: Project[] = (portfolio.project ?? [])
+    .filter((project): project is NonNullable<typeof project> => project !== null)
+    .map((project, index) => ({
+      number: `PROJECT ${String(index + 1).padStart(2, '0')}`,
+      title: project.title || '',
+      description: project.description || '',
+      liveLink: project.liveLink ?? null,
+      gitHubLink: project.githubLink ?? null,
+      order: project.order ?? 0,
+      technologies:
+        project.technologies?.map((tech) => tech?.name).filter((name): name is string => !!name) ??
+        [],
+    }))
+    .sort((a, b) => b.order - a.order);
+
+  return {
+    leftPanelData,
+    employments,
+    projects,
   };
 }
