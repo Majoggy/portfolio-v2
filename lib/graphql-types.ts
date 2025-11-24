@@ -43,6 +43,42 @@ export type BooleanFilterInput = {
   startsWith?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
+export type ComponentEmploymentEmployment = {
+  __typename?: 'ComponentEmploymentEmployment';
+  company: Scalars['String']['output'];
+  endDate?: Maybe<Scalars['Date']['output']>;
+  id: Scalars['ID']['output'];
+  responsibilities?: Maybe<Scalars['JSON']['output']>;
+  startDate: Scalars['Date']['output'];
+  technologies: Array<Maybe<Technology>>;
+  technologies_connection?: Maybe<TechnologyRelationResponseCollection>;
+  title: Scalars['String']['output'];
+};
+
+
+export type ComponentEmploymentEmploymentTechnologiesArgs = {
+  filters?: InputMaybe<TechnologyFiltersInput>;
+  pagination?: InputMaybe<PaginationArg>;
+  sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+
+export type ComponentEmploymentEmploymentTechnologies_ConnectionArgs = {
+  filters?: InputMaybe<TechnologyFiltersInput>;
+  pagination?: InputMaybe<PaginationArg>;
+  sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type ComponentEmploymentEmploymentInput = {
+  company?: InputMaybe<Scalars['String']['input']>;
+  endDate?: InputMaybe<Scalars['Date']['input']>;
+  id?: InputMaybe<Scalars['ID']['input']>;
+  responsibilities?: InputMaybe<Scalars['JSON']['input']>;
+  startDate?: InputMaybe<Scalars['Date']['input']>;
+  technologies?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  title?: InputMaybe<Scalars['String']['input']>;
+};
+
 export type ComponentMenuLinkMenuLink = {
   __typename?: 'ComponentMenuLinkMenuLink';
   href: Scalars['String']['output'];
@@ -65,6 +101,54 @@ export type ComponentMenuLinkMenuLinkInput = {
   id?: InputMaybe<Scalars['ID']['input']>;
   isExternal?: InputMaybe<Scalars['Boolean']['input']>;
   label?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type ComponentProjectProject = {
+  __typename?: 'ComponentProjectProject';
+  description: Scalars['String']['output'];
+  githubLink?: Maybe<Scalars['String']['output']>;
+  id: Scalars['ID']['output'];
+  liveLink?: Maybe<Scalars['String']['output']>;
+  order?: Maybe<Scalars['Int']['output']>;
+  technologies: Array<Maybe<Technology>>;
+  technologies_connection?: Maybe<TechnologyRelationResponseCollection>;
+  title: Scalars['String']['output'];
+};
+
+
+export type ComponentProjectProjectTechnologiesArgs = {
+  filters?: InputMaybe<TechnologyFiltersInput>;
+  pagination?: InputMaybe<PaginationArg>;
+  sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+
+export type ComponentProjectProjectTechnologies_ConnectionArgs = {
+  filters?: InputMaybe<TechnologyFiltersInput>;
+  pagination?: InputMaybe<PaginationArg>;
+  sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type ComponentProjectProjectFiltersInput = {
+  and?: InputMaybe<Array<InputMaybe<ComponentProjectProjectFiltersInput>>>;
+  description?: InputMaybe<StringFilterInput>;
+  githubLink?: InputMaybe<StringFilterInput>;
+  liveLink?: InputMaybe<StringFilterInput>;
+  not?: InputMaybe<ComponentProjectProjectFiltersInput>;
+  or?: InputMaybe<Array<InputMaybe<ComponentProjectProjectFiltersInput>>>;
+  order?: InputMaybe<IntFilterInput>;
+  technologies?: InputMaybe<TechnologyFiltersInput>;
+  title?: InputMaybe<StringFilterInput>;
+};
+
+export type ComponentProjectProjectInput = {
+  description?: InputMaybe<Scalars['String']['input']>;
+  githubLink?: InputMaybe<Scalars['String']['input']>;
+  id?: InputMaybe<Scalars['ID']['input']>;
+  liveLink?: InputMaybe<Scalars['String']['input']>;
+  order?: InputMaybe<Scalars['Int']['input']>;
+  technologies?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+  title?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type DateFilterInput = {
@@ -214,7 +298,7 @@ export type FloatFilterInput = {
   startsWith?: InputMaybe<Scalars['Float']['input']>;
 };
 
-export type GenericMorph = ComponentMenuLinkMenuLink | Employment | I18NLocale | LeftPanel | Project | ReviewWorkflowsWorkflow | ReviewWorkflowsWorkflowStage | Technology | UploadFile | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser;
+export type GenericMorph = ComponentEmploymentEmployment | ComponentMenuLinkMenuLink | ComponentProjectProject | Employment | I18NLocale | Portfolio | Project | ReviewWorkflowsWorkflow | ReviewWorkflowsWorkflowStage | Technology | UploadFile | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser;
 
 export type I18NLocale = {
   __typename?: 'I18NLocale';
@@ -319,33 +403,6 @@ export type JsonFilterInput = {
   startsWith?: InputMaybe<Scalars['JSON']['input']>;
 };
 
-export type LeftPanel = {
-  __typename?: 'LeftPanel';
-  about?: Maybe<Scalars['String']['output']>;
-  createdAt?: Maybe<Scalars['DateTime']['output']>;
-  documentId: Scalars['ID']['output'];
-  jobTitle: Scalars['String']['output'];
-  link?: Maybe<Array<Maybe<ComponentMenuLinkMenuLink>>>;
-  name: Scalars['String']['output'];
-  publishedAt?: Maybe<Scalars['DateTime']['output']>;
-  updatedAt?: Maybe<Scalars['DateTime']['output']>;
-};
-
-
-export type LeftPanelLinkArgs = {
-  filters?: InputMaybe<ComponentMenuLinkMenuLinkFiltersInput>;
-  pagination?: InputMaybe<PaginationArg>;
-  sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-};
-
-export type LeftPanelInput = {
-  about?: InputMaybe<Scalars['String']['input']>;
-  jobTitle?: InputMaybe<Scalars['String']['input']>;
-  link?: InputMaybe<Array<InputMaybe<ComponentMenuLinkMenuLinkInput>>>;
-  name?: InputMaybe<Scalars['String']['input']>;
-  publishedAt?: InputMaybe<Scalars['DateTime']['input']>;
-};
-
 export type Mutation = {
   __typename?: 'Mutation';
   /** Change user password. Confirm with the current password. */
@@ -360,7 +417,7 @@ export type Mutation = {
   /** Create a new user */
   createUsersPermissionsUser: UsersPermissionsUserEntityResponse;
   deleteEmployment?: Maybe<DeleteMutationResponse>;
-  deleteLeftPanel?: Maybe<DeleteMutationResponse>;
+  deletePortfolio?: Maybe<DeleteMutationResponse>;
   deleteProject?: Maybe<DeleteMutationResponse>;
   deleteReviewWorkflowsWorkflow?: Maybe<DeleteMutationResponse>;
   deleteReviewWorkflowsWorkflowStage?: Maybe<DeleteMutationResponse>;
@@ -380,7 +437,7 @@ export type Mutation = {
   /** Reset user password. Confirm with a code (resetToken from forgotPassword) */
   resetPassword?: Maybe<UsersPermissionsLoginPayload>;
   updateEmployment?: Maybe<Employment>;
-  updateLeftPanel?: Maybe<LeftPanel>;
+  updatePortfolio?: Maybe<Portfolio>;
   updateProject?: Maybe<Project>;
   updateReviewWorkflowsWorkflow?: Maybe<ReviewWorkflowsWorkflow>;
   updateReviewWorkflowsWorkflowStage?: Maybe<ReviewWorkflowsWorkflowStage>;
@@ -514,8 +571,8 @@ export type MutationUpdateEmploymentArgs = {
 };
 
 
-export type MutationUpdateLeftPanelArgs = {
-  data: LeftPanelInput;
+export type MutationUpdatePortfolioArgs = {
+  data: PortfolioInput;
   status?: InputMaybe<PublicationStatus>;
 };
 
@@ -578,6 +635,44 @@ export type PaginationArg = {
   page?: InputMaybe<Scalars['Int']['input']>;
   pageSize?: InputMaybe<Scalars['Int']['input']>;
   start?: InputMaybe<Scalars['Int']['input']>;
+};
+
+export type Portfolio = {
+  __typename?: 'Portfolio';
+  about?: Maybe<Scalars['String']['output']>;
+  createdAt?: Maybe<Scalars['DateTime']['output']>;
+  documentId: Scalars['ID']['output'];
+  employment?: Maybe<ComponentEmploymentEmployment>;
+  jobTitle: Scalars['String']['output'];
+  link?: Maybe<Array<Maybe<ComponentMenuLinkMenuLink>>>;
+  name: Scalars['String']['output'];
+  project?: Maybe<Array<Maybe<ComponentProjectProject>>>;
+  publishedAt?: Maybe<Scalars['DateTime']['output']>;
+  updatedAt?: Maybe<Scalars['DateTime']['output']>;
+};
+
+
+export type PortfolioLinkArgs = {
+  filters?: InputMaybe<ComponentMenuLinkMenuLinkFiltersInput>;
+  pagination?: InputMaybe<PaginationArg>;
+  sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+
+export type PortfolioProjectArgs = {
+  filters?: InputMaybe<ComponentProjectProjectFiltersInput>;
+  pagination?: InputMaybe<PaginationArg>;
+  sort?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type PortfolioInput = {
+  about?: InputMaybe<Scalars['String']['input']>;
+  employment?: InputMaybe<ComponentEmploymentEmploymentInput>;
+  jobTitle?: InputMaybe<Scalars['String']['input']>;
+  link?: InputMaybe<Array<InputMaybe<ComponentMenuLinkMenuLinkInput>>>;
+  name?: InputMaybe<Scalars['String']['input']>;
+  project?: InputMaybe<Array<InputMaybe<ComponentProjectProjectInput>>>;
+  publishedAt?: InputMaybe<Scalars['DateTime']['input']>;
 };
 
 export type Project = {
@@ -654,8 +749,8 @@ export type Query = {
   i18NLocale?: Maybe<I18NLocale>;
   i18NLocales: Array<Maybe<I18NLocale>>;
   i18NLocales_connection?: Maybe<I18NLocaleEntityResponseCollection>;
-  leftPanel?: Maybe<LeftPanel>;
   me?: Maybe<UsersPermissionsMe>;
+  portfolio?: Maybe<Portfolio>;
   project?: Maybe<Project>;
   projects: Array<Maybe<Project>>;
   projects_connection?: Maybe<ProjectEntityResponseCollection>;
@@ -724,7 +819,7 @@ export type QueryI18NLocales_ConnectionArgs = {
 };
 
 
-export type QueryLeftPanelArgs = {
+export type QueryPortfolioArgs = {
   status?: InputMaybe<PublicationStatus>;
 };
 
@@ -1309,22 +1404,10 @@ export type UsersPermissionsUserRelationResponseCollection = {
   nodes: Array<UsersPermissionsUser>;
 };
 
-export type GetProjectsQueryVariables = Exact<{ [key: string]: never; }>;
+export type GetPortfolioDataQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetProjectsQuery = { __typename?: 'Query', projects: Array<{ __typename?: 'Project', title: string, description: string, liveLink?: string | null, gitHubLink?: string | null, order?: number | null, technologies: Array<{ __typename?: 'Technology', name?: string | null } | null> } | null> };
-
-export type GetEmploymentsQueryVariables = Exact<{ [key: string]: never; }>;
+export type GetPortfolioDataQuery = { __typename?: 'Query', portfolio?: { __typename?: 'Portfolio', name: string, jobTitle: string, about?: string | null, link?: Array<{ __typename?: 'ComponentMenuLinkMenuLink', label: string, href: string, isExternal: boolean } | null> | null, employment?: { __typename?: 'ComponentEmploymentEmployment', company: string, title: string, startDate: any, endDate?: any | null, responsibilities?: any | null, technologies: Array<{ __typename?: 'Technology', name?: string | null } | null> } | null, project?: Array<{ __typename?: 'ComponentProjectProject', title: string, description: string, githubLink?: string | null, liveLink?: string | null, order?: number | null, technologies: Array<{ __typename?: 'Technology', name?: string | null } | null> } | null> | null } | null };
 
 
-export type GetEmploymentsQuery = { __typename?: 'Query', employments: Array<{ __typename?: 'Employment', title: string, company: string, startDate: any, endDate?: any | null, responsibilities?: any | null, technologies: Array<{ __typename?: 'Technology', name?: string | null } | null> } | null> };
-
-export type GetLeftPanelQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type GetLeftPanelQuery = { __typename?: 'Query', leftPanel?: { __typename?: 'LeftPanel', name: string, jobTitle: string, about?: string | null, link?: Array<{ __typename?: 'ComponentMenuLinkMenuLink', label: string, href: string, isExternal: boolean } | null> | null } | null };
-
-
-export const GetProjectsDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetProjects"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"projects"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"sort"},"value":{"kind":"StringValue","value":"order:desc","block":false}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"liveLink"}},{"kind":"Field","name":{"kind":"Name","value":"gitHubLink"}},{"kind":"Field","name":{"kind":"Name","value":"order"}},{"kind":"Field","name":{"kind":"Name","value":"technologies"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"name"}}]}}]}}]}}]} as unknown as DocumentNode<GetProjectsQuery, GetProjectsQueryVariables>;
-export const GetEmploymentsDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetEmployments"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"employments"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"sort"},"value":{"kind":"StringValue","value":"startDate:desc","block":false}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"company"}},{"kind":"Field","name":{"kind":"Name","value":"startDate"}},{"kind":"Field","name":{"kind":"Name","value":"endDate"}},{"kind":"Field","name":{"kind":"Name","value":"responsibilities"}},{"kind":"Field","name":{"kind":"Name","value":"technologies"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"name"}}]}}]}}]}}]} as unknown as DocumentNode<GetEmploymentsQuery, GetEmploymentsQueryVariables>;
-export const GetLeftPanelDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetLeftPanel"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"leftPanel"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"jobTitle"}},{"kind":"Field","name":{"kind":"Name","value":"about"}},{"kind":"Field","name":{"kind":"Name","value":"link"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"label"}},{"kind":"Field","name":{"kind":"Name","value":"href"}},{"kind":"Field","name":{"kind":"Name","value":"isExternal"}}]}}]}}]}}]} as unknown as DocumentNode<GetLeftPanelQuery, GetLeftPanelQueryVariables>;
+export const GetPortfolioDataDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetPortfolioData"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"portfolio"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"jobTitle"}},{"kind":"Field","name":{"kind":"Name","value":"about"}},{"kind":"Field","name":{"kind":"Name","value":"link"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"label"}},{"kind":"Field","name":{"kind":"Name","value":"href"}},{"kind":"Field","name":{"kind":"Name","value":"isExternal"}}]}},{"kind":"Field","name":{"kind":"Name","value":"employment"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"company"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"startDate"}},{"kind":"Field","name":{"kind":"Name","value":"endDate"}},{"kind":"Field","name":{"kind":"Name","value":"responsibilities"}},{"kind":"Field","name":{"kind":"Name","value":"technologies"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"name"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"project"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"githubLink"}},{"kind":"Field","name":{"kind":"Name","value":"liveLink"}},{"kind":"Field","name":{"kind":"Name","value":"order"}},{"kind":"Field","name":{"kind":"Name","value":"technologies"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"name"}}]}}]}}]}}]}}]} as unknown as DocumentNode<GetPortfolioDataQuery, GetPortfolioDataQueryVariables>;
