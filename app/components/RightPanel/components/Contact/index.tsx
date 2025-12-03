@@ -17,7 +17,7 @@ export const Contact = () => {
     <Section mb="0" label="GET IN TOUCH" id="contact">
       <ContactGrid>
         {contactDetails.map((contact) => (
-          <ContactCard href={contact.href}>
+          <ContactCard key={contact.href} href={contact.href}>
             <IconWrapper>
               <contact.svg />
             </IconWrapper>
