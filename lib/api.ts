@@ -32,7 +32,7 @@ export async function getPortfolio(): Promise<{
   const projects = (project ?? [])
     .filter((p): p is NonNullable<typeof p> => p !== null)
     .map(mapProject)
-    .sort((a, b) => b.order - a.order);
+    .sort((a, b) => a.order - b.order);
 
   return { leftPanelData, employments, projects };
 }

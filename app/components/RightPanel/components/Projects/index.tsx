@@ -8,7 +8,7 @@ interface Props {
 
 export const Projects = ({ projects }: Props) => {
   return (
-    <Section heading="Featured Work" label="PROJECTS" id="projects">
+    <Section heading="Personal Work" label="PROJECTS" id="projects">
       {projects.map((project, index) => (
         <ProjectCard key={index} {...project} />
       ))}

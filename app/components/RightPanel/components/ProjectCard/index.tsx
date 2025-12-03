@@ -15,7 +15,7 @@ interface Props {
   description: string;
   technologies?: string[];
   liveLink?: string | null;
-  githubLink?: string | null;
+  gitHubLink?: string | null;
 }
 
 export const ProjectCard = ({
@@ -24,7 +24,7 @@ export const ProjectCard = ({
   description,
   technologies,
   liveLink,
-  githubLink,
+  gitHubLink,
 }: Props) => {
   return (
     <Card>
@@ -37,11 +37,11 @@ export const ProjectCard = ({
       <Links>
         {liveLink && (
           <ProjectLink href={liveLink} target="_blank" rel="noopener noreferrer">
-            View Project
+            Project
           </ProjectLink>
         )}
-        {githubLink && (
-          <ProjectLink href={githubLink} target="_blank" rel="noopener noreferrer">
+        {gitHubLink && (
+          <ProjectLink href={gitHubLink} target="_blank" rel="noopener noreferrer">
             GitHub
           </ProjectLink>
         )}

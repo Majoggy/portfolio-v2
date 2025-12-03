@@ -9,10 +9,11 @@ interface Props {
 }
 
 export const RightPanel = ({ employments, projects }: Props) => {
+  console.log(projects);
   return (
     <Wrapper>
-      <Projects projects={projects} />
       <Employment employments={employments} />
+      <Projects projects={projects} />
     </Wrapper>
   );
 };

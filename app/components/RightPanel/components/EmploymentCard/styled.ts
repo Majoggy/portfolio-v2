@@ -61,3 +61,11 @@ export const Description = styled.p`
   line-height: 1.7;
   font-family: ${fonts.body};
 `;
+
+export const TechStack = styled.div`
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 1.875rem;
+  margin-bottom: 1.25rem;
+`;
