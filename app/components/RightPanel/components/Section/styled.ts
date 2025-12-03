@@ -24,7 +24,7 @@ export const SectionLabel = styled.div`
   font-weight: 600;
   letter-spacing: 2px;
   text-transform: uppercase;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 `;
 
 export const SectionTitle = styled.h2`

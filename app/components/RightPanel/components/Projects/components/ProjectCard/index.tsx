@@ -18,17 +18,9 @@ interface Props {
   gitHubLink?: string | null;
 }
 
-export const ProjectCard = ({
-  number,
-  title,
-  description,
-  technologies,
-  liveLink,
-  gitHubLink,
-}: Props) => {
+export const ProjectCard = ({ title, description, technologies, liveLink, gitHubLink }: Props) => {
   return (
     <Card>
-      <ProjectNumber>{number}</ProjectNumber>
       <Title>{title}</Title>
       <Description>{description}</Description>
       <TechStack>

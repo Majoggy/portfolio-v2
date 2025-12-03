@@ -9,7 +9,7 @@ interface Props {
 
 export const Employment = ({ employments }: Props) => {
   return (
-    <Section mb={spacing.xl} heading="Experience" label="EMPLOYMENT HISTORY" id="employment">
+    <Section mb={spacing.xl} label="EMPLOYMENT HISTORY" id="employment">
       {employments.map((job, index) => (
         <EmploymentCard key={index} {...job} />
       ))}

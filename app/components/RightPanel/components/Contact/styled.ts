@@ -4,7 +4,6 @@ import styled from 'styled-components';
 export const ContactGrid = styled.div`
   display: flex;
   gap: ${spacing.md};
-  margin-top: ${spacing.md};
 
   @media (max-width: ${breakpoints.smallMobile}) {
     justify-content: center;
@@ -15,7 +14,6 @@ export const ContactGrid = styled.div`
 export const ContactCard = styled.a`
   background: ${gradients.contactCard};
   border-radius: 1rem;
-  padding: ${spacing.lg};
   display: flex;
   align-items: center;
   justify-content: center;
