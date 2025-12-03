@@ -1,7 +1,7 @@
 import { apolloClient } from '@/lib/apollo-client';
 import { GetPortfolioDataDocument, type GetPortfolioDataQuery } from '@/lib/graphql-types';
 import { Employment, LeftPanelData, Project } from './types';
-import { formatPeriod } from './utils';
+import { mapEmployment, mapProject } from './helpers';
 
 export async function getPortfolio(): Promise<{
   leftPanelData: LeftPanelData | null;
@@ -13,64 +13,26 @@ export async function getPortfolio(): Promise<{
   });
 
   if (!data?.portfolio) {
-    return {
-      leftPanelData: null,
-      employments: [],
-      projects: [],
-    };
+    return { leftPanelData: null, employments: [], projects: [] };
   }
 
-  const portfolio = data.portfolio;
+  const { name, jobTitle, about, link, employment, project } = data.portfolio;
 
   const leftPanelData: LeftPanelData = {
-    name: portfolio.name,
-    jobTitle: portfolio.jobTitle,
-    about: portfolio.about || '',
-    links:
-      portfolio.link
-        ?.filter((link) => link !== null)
-        .map((link) => ({
-          label: link!.label,
-          href: link!.href,
-          isExternal: link!.isExternal,
-        })) ?? [],
+    name,
+    jobTitle,
+    about: about || '',
+    links: link?.filter((l): l is NonNullable<typeof l> => l !== null) ?? [],
   };
 
-  const employments: Employment[] = portfolio.employment
-    ? [
-        {
-          title: portfolio.employment.title || '',
-          company: portfolio.employment.company || '',
-          period: formatPeriod(portfolio.employment.startDate, portfolio.employment.endDate ?? ''),
-          responsibilities: Array.isArray(portfolio.employment.responsibilities)
-            ? portfolio.employment.responsibilities
-            : [],
-          technologies:
-            portfolio.employment.technologies
-              ?.map((tech) => tech?.name)
-              .filter((name): name is string => !!name) ?? [],
-        },
-      ]
-    : [];
+  const employments = (employment ?? [])
+    .filter((emp): emp is NonNullable<typeof emp> => emp !== null)
+    .map(mapEmployment);
 
-  const projects: Project[] = (portfolio.project ?? [])
-    .filter((project): project is NonNullable<typeof project> => project !== null)
-    .map((project, index) => ({
-      number: `PROJECT ${String(index + 1).padStart(2, '0')}`,
-      title: project.title || '',
-      description: project.description || '',
-      liveLink: project.liveLink ?? null,
-      gitHubLink: project.githubLink ?? null,
-      order: project.order ?? 0,
-      technologies:
-        project.technologies?.map((tech) => tech?.name).filter((name): name is string => !!name) ??
-        [],
-    }))
+  const projects = (project ?? [])
+    .filter((p): p is NonNullable<typeof p> => p !== null)
+    .map(mapProject)
     .sort((a, b) => b.order - a.order);
 
-  return {
-    leftPanelData,
-    employments,
-    projects,
-  };
+  return { leftPanelData, employments, projects };
 }

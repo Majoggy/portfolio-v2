@@ -1,3 +1,9 @@
+import { GetPortfolioDataQuery } from './graphql-types';
+
+export type PortfolioData = NonNullable<GetPortfolioDataQuery['portfolio']>;
+export type EmploymentData = NonNullable<NonNullable<PortfolioData['employment']>[number]>;
+export type ProjectData = NonNullable<NonNullable<PortfolioData['project']>[number]>;
+
 export type Employment = {
   title: string;
   company: string;
