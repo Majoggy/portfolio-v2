@@ -11,6 +11,7 @@ export const Wrapper = styled.div`
   height: 100vh;
   left: 0;
   top: 0;
+  overflow-y: auto;
 
   @media (max-width: ${breakpoints.mobile}) {
     position: relative;
