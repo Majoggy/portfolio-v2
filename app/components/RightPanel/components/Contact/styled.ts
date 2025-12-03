@@ -4,6 +4,9 @@ import styled from 'styled-components';
 export const ContactGrid = styled.div`
   display: flex;
   gap: ${spacing.md};
+  max-width: 40rem;
+  margin-left: auto;
+  margin-right: auto;
 
   @media (max-width: ${breakpoints.smallMobile}) {
     justify-content: center;
@@ -14,14 +17,14 @@ export const ContactGrid = styled.div`
 export const ContactCard = styled.a`
   background: ${gradients.contactCard};
   border-radius: 1rem;
+  padding: ${spacing.lg};
   display: flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
   transition: all ${transitions.slow};
   cursor: pointer;
-  flex: 1 1 auto;
-  min-width: 7rem;
+  flex: 1 1 0;
   aspect-ratio: 1;
 
   &:hover {
@@ -30,6 +33,9 @@ export const ContactCard = styled.a`
   }
 
   @media (max-width: ${breakpoints.smallMobile}) {
+    flex: 0 0 8rem;
+    max-width: 8rem;
+
     &:first-child {
       flex-basis: 100%;
     }

@@ -9,7 +9,7 @@ interface Props {
 
 export const Projects = ({ projects }: Props) => {
   return (
-    <Section mb={spacing.lg} label="Personal projects" id="projects">
+    <Section mb={spacing.xl} label="Personal projects" id="projects">
       {projects.map((project, index) => (
         <ProjectCard key={index} {...project} />
       ))}

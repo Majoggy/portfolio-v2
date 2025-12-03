@@ -10,11 +10,9 @@ const contactDetails = [
   { href: 'https://www.github.com/majoggy/', svg: GitHubIcon },
 ];
 
-// todo - fix how this looks on ultrawide screens
-
 export const Contact = () => {
   return (
-    <Section mb="0" label="Contact" id="contact">
+    <Section mb="0" id="contact">
       <ContactGrid>
         {contactDetails.map((contact) => (
           <ContactCard key={contact.href} href={contact.href}>
