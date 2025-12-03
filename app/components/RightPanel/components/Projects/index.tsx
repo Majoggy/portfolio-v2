@@ -1,5 +1,6 @@
+import { spacing } from '@/styles/utils';
 import { Section } from '../Section';
-import { ProjectCard } from '../ProjectCard';
+import { ProjectCard } from './components/ProjectCard';
 import { Project } from '@/lib/types';
 
 interface Props {
@@ -8,7 +9,7 @@ interface Props {
 
 export const Projects = ({ projects }: Props) => {
   return (
-    <Section heading="Personal Work" label="PROJECTS" id="projects">
+    <Section mb={spacing.xl} heading="Personal Work" label="PROJECTS" id="projects">
       {projects.map((project, index) => (
         <ProjectCard key={index} {...project} />
       ))}

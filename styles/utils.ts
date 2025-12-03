@@ -15,7 +15,8 @@ export const colors = {
 export const gradients = {
   background: 'linear-gradient(135deg, #0a1929 0%, #1a3a52 100%)',
   leftPanel: 'linear-gradient(180deg, #0d2137 0%, #1a374d 100%)',
-  card: 'linear-gradient(135deg, rgba(30, 58, 87, 0.6) 0%, rgba(26, 55, 82, 0.4) 100%)',
+  card: 'linear-gradient(135deg, rgba(30, 58, 87, 0.95) 0%, rgba(26, 55, 82, 0.85) 100%)',
+  contactCard: 'linear-gradient(135deg, rgba(40, 75, 110, 0.95) 0%, rgba(35, 65, 95, 0.85) 100%)',
 };
 
 export const fonts = {

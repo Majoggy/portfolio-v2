@@ -1,5 +1,6 @@
+import { spacing } from '@/styles/utils';
 import { Section } from '../Section';
-import { EmploymentCard } from '../EmploymentCard';
+import { EmploymentCard } from './components/EmploymentCard';
 import type { Employment as EmploymentType } from '@/lib/types';
 
 interface Props {
@@ -8,7 +9,7 @@ interface Props {
 
 export const Employment = ({ employments }: Props) => {
   return (
-    <Section heading="Experience" label="EMPLOYMENT HISTORY" id="employment">
+    <Section mb={spacing.xl} heading="Experience" label="EMPLOYMENT HISTORY" id="employment">
       {employments.map((job, index) => (
         <EmploymentCard key={index} {...job} />
       ))}

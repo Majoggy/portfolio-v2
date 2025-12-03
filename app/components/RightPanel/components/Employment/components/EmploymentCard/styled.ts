@@ -4,7 +4,6 @@ import styled from 'styled-components';
 export const Card = styled.div`
   border-left: 2px solid ${colors.electricBlue};
   padding-left: 1.875rem;
-  margin-bottom: 2.5rem;
   position: relative;
 
   &::before {

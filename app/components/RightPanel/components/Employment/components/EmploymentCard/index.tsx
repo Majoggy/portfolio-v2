@@ -1,4 +1,4 @@
-import { TechTag } from '../ProjectCard/styled';
+import { TechTag } from '../../../Projects/components/ProjectCard/styled';
 import {
   Card,
   Company,

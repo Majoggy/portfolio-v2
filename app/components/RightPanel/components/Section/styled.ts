@@ -12,8 +12,8 @@ export const fadeInUp = keyframes`
   }
 `;
 
-export const SectionWrapper = styled.section`
-  margin-bottom: 6.25rem;
+export const SectionWrapper = styled.section<{ mb: string }>`
+  margin-bottom: ${(p) => p.mb};
   animation: ${fadeInUp} 0.6s ease;
   scroll-margin-top: 3.75rem;
 `;
