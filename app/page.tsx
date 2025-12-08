@@ -5,9 +5,14 @@ import { PortfolioClient } from './PortfolioClient';
 export const revalidate = 900;
 
 export default async function Portfolio() {
-  const { employments, projects, leftPanelData } = await getPortfolio();
+  const { employments, projects, leftPanelData, isLoading } = await getPortfolio();
 
   return (
-    <PortfolioClient employments={employments} projects={projects} leftPanelData={leftPanelData} />
+    <PortfolioClient
+      employments={employments}
+      projects={projects}
+      leftPanelData={leftPanelData}
+      isLoading={isLoading}
+    />
   );
 }

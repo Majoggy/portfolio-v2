@@ -9,13 +9,14 @@ interface Props {
   employments: Employment[];
   projects: Project[];
   leftPanelData: LeftPanelData | null;
+  isLoading: boolean;
 }
 
-export function PortfolioClient({ employments, projects, leftPanelData }: Props) {
+export function PortfolioClient({ employments, projects, leftPanelData, isLoading }: Props) {
   return (
     <Container>
       <LeftPanel data={leftPanelData} />
-      <RightPanel projects={projects} employments={employments} />
+      <RightPanel projects={projects} employments={employments} isLoading={isLoading} />
     </Container>
   );
 }
