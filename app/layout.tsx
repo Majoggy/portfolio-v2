@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { jetbrainsMono, spaceGrotesk } from '@/styles/fonts';
+import StyledComponentsRegistry from './StyledComponentsRegistry';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -14,7 +15,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${spaceGrotesk.variable} ${jetbrainsMono.variable}`}>{children}</body>
+      <body className={`${spaceGrotesk.variable} ${jetbrainsMono.variable}`}>
+        <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+      </body>
     </html>
   );
 }

@@ -11,7 +11,7 @@ interface Props {
 
 export const Section = ({ heading, label, children, id, mb }: Props) => {
   return (
-    <SectionWrapper mb={mb || '6rem'} id={id}>
+    <SectionWrapper $mb={mb || '6rem'} id={id}>
       {label && <SectionLabel>{label}</SectionLabel>}
       {heading && <SectionTitle>{heading}</SectionTitle>}
       <SectionContent>{children}</SectionContent>
